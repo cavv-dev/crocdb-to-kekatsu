@@ -146,3 +146,5 @@ if __name__ == '__main__':
     kekatsu_dbs_dir = config.get('kekatsu_dbs_dir', '')
 
     create_kekatsu_database(['nds', 'dsi'], 'ds', kekatsu_dbs_dir)
+    create_kekatsu_database(['nds'], 'nds', kekatsu_dbs_dir)
+    create_kekatsu_database(['dsi'], 'dsi', kekatsu_dbs_dir)
