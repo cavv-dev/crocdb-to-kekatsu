@@ -62,8 +62,12 @@ def select_best_link(links, platform):
     }
 
     filtered_links = []
-    for link in links:
-        if link['format'] in allowed_formats[platform]:
+    if platform in allowed_formats:
+        for link in links:
+            if link['format'] in allowed_formats[platform]:
+                filtered_links.append(link)
+    else:
+        for link in links:
             filtered_links.append(link)
 
     # Prefer MarioCube and Myrient among the filtered links
@@ -148,3 +152,15 @@ if __name__ == '__main__':
     create_kekatsu_database(['nds', 'dsi'], 'ds', kekatsu_dbs_dir)
     create_kekatsu_database(['nds'], 'nds', kekatsu_dbs_dir)
     create_kekatsu_database(['dsi'], 'dsi', kekatsu_dbs_dir)
+    create_kekatsu_database(['nes', 'fds'], 'nes', kekatsu_dbs_dir)
+    create_kekatsu_database(['snes'], 'snes', kekatsu_dbs_dir)
+    create_kekatsu_database(['gb', 'gbc'], 'gb', kekatsu_dbs_dir)
+    create_kekatsu_database(['gba'], 'gba', kekatsu_dbs_dir)
+    create_kekatsu_database(['sms'], 'sms', kekatsu_dbs_dir)
+    create_kekatsu_database(['gg'], 'gg', kekatsu_dbs_dir)
+    create_kekatsu_database(['smd'], 'smd', kekatsu_dbs_dir)
+    create_kekatsu_database(['a26'], 'a26', kekatsu_dbs_dir)
+    create_kekatsu_database(['a52'], 'a52', kekatsu_dbs_dir)
+    create_kekatsu_database(['a78'], 'a78', kekatsu_dbs_dir)
+    create_kekatsu_database(['tg16'], 'tg16', kekatsu_dbs_dir)
+    create_kekatsu_database(['cv'], 'cv', kekatsu_dbs_dir)
